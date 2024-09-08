@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-
 import { PickupCallsPageRoutingModule } from './pickup-calls-routing.module';
 import { PickupCallsPage } from './pickup-calls.page';
-import { HomePageModule } from '../home/home.module';  // Import HomePageModule
+import { PickupCallCardModule } from 'src/app/components/pickup-call-card/pickup-call-card.module';
 
 @NgModule({
   imports: [
@@ -13,7 +12,7 @@ import { HomePageModule } from '../home/home.module';  // Import HomePageModule
     FormsModule,
     IonicModule,
     PickupCallsPageRoutingModule,
-    HomePageModule  // Include HomePageModule here
+    PickupCallCardModule
   ],
   declarations: [
     PickupCallsPage

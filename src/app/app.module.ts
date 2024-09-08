@@ -11,25 +11,19 @@ import { environment } from 'src/environments/environment.prod';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoadingComponent
-  ],
+  declarations: [AppComponent, LoadingComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule,
-    AngularFireAuthModule,
+    AppRoutingModule,
     ...AppStoreModule,
-    StoreDevtoolsModule.instrument({maxAge: 25})
-  ],
-  providers: [{
-    provide: RouteReuseStrategy,
-    useClass: IonicRouteStrategy }],
+    StoreDevtoolsModule.instrument({maxAge: 25})],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

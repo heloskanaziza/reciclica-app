@@ -8,15 +8,15 @@ import { AbstractControl, FormGroup } from '@angular/forms';
 })
 export class ErrorMessageComponent  implements OnInit {
 
-  @Input() message: string='';
-  @Input() field: AbstractControl | null = null;
-  @Input() error: string='';
+ @Input() message?: string;
+  @Input() field?: AbstractControl;
+  @Input() error?: string;
   constructor() { }
 
   ngOnInit() {}
 
   shouldShowComponent(){
-    if (this.field && this.field.touched && this.field.errors?.[this.error]){
+    if (this.field && this.field.touched && this.field.errors?.[this.error!]) {
       return true;
     }
     return false;
