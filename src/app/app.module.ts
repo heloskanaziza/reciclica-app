@@ -26,4 +26,4 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {} 
